@@ -541,6 +541,8 @@ def config_parser():
                         help='frequency of testset saving')
     parser.add_argument("--i_video",   type=int, default=50000, 
                         help='frequency of render_poses video saving')
+    parser.add_argument('--eval', action='store_true',
+                    help='evaluate a trained model on the full test set and print PSNR (no training)')
 
     return parser
 
@@ -711,6 +713,30 @@ def train():
     if use_batching:
         rays_rgb = torch.Tensor(rays_rgb).to(device)
 
+    if args.eval:
+        print(f'\n[EVAL]  computing PSNR on {len(i_test)} test frames ...')
+
+        psnr_list = []
+        with torch.no_grad():
+            for idx, img_i in enumerate(i_test):
+                pose   = poses[img_i, :3, :4]
+                target = images[img_i]
+                if not use_batching:                       # no_batching=True 时需上 GPU
+                    target = torch.tensor(target).to(device)
+
+                rgb, _, _, _ = render(  # 与训练阶段完全一致的推理设置
+                    H, W, K, chunk=args.chunk, c2w=pose, **render_kwargs_test)
+
+                mse  = img2mse(rgb, target)
+                psnr = mse2psnr(mse).item()
+                psnr_list.append(psnr)
+
+                print(f'   • frame {idx:03d} (idx {img_i:03d})  PSNR = {psnr:6.2f} dB')
+
+        mean_psnr = np.mean(psnr_list)
+        print(f'\n[EVAL]  mean PSNR over {len(psnr_list)} frames = {mean_psnr:6.2f} dB\n')
+
+        sys.exit()
 
     # N_iters = 200000 + 1
     N_iters = 200000 + 1
