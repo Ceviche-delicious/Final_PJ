@@ -1,0 +1,17 @@
+{
+  "experiment_name": "vasedeck",
+  "method_name": "splatfacto",
+  "checkpoint": "outputs/vasedeck/splatfacto/2025-06-14_144920/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 27.0665340423584,
+    "psnr_std": 1.4478334188461304,
+    "ssim": 0.8590426445007324,
+    "ssim_std": 0.03758731856942177,
+    "lpips": 0.09457460045814514,
+    "lpips_std": 0.021038485690951347,
+    "num_rays_per_sec": 1017901.75,
+    "num_rays_per_sec_std": 328602.78125,
+    "fps": 1.3388422727584839,
+    "fps_std": 0.4322099983692169
+  }
+}

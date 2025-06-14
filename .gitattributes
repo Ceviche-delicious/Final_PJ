@@ -1,3 +1,4 @@
 *.db filter=lfs diff=lfs merge=lfs -text
 nerf-pytorch/data/nerf_llff_data/vasedeck/database.db filter=lfs diff=lfs merge=lfs -text
 Instant-NGP/data/vasedeck/colmap/database.db filter=lfs diff=lfs merge=lfs -text
+3D-Gaussian-Splatting/data/vasedeck/colmap/database.db filter=lfs diff=lfs merge=lfs -text
