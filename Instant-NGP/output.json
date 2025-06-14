@@ -1,0 +1,17 @@
+{
+  "experiment_name": "vasedeck",
+  "method_name": "instant-ngp",
+  "checkpoint": "outputs/vasedeck/instant-ngp/2025-06-13_200815/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 23.367002487182617,
+    "psnr_std": 2.45648455619812,
+    "ssim": 0.7761522531509399,
+    "ssim_std": 0.04520536586642265,
+    "lpips": 0.18664979934692383,
+    "lpips_std": 0.04832160100340843,
+    "num_rays_per_sec": 382873.375,
+    "num_rays_per_sec_std": 56356.515625,
+    "fps": 0.5024268627166748,
+    "fps_std": 0.0739540234208107
+  }
+}
