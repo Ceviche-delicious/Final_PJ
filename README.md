@@ -73,7 +73,7 @@ ns-eval --load-config outputs/vasedeck/instant-ngp/2025-06-13_200815/config.yml 
 ```bash
 ns-render camera-path --load-config outputs/vasedeck/instant-ngp/2025-06-13_200815/config.yml --camera-path-filename data/vasedeck/camera_paths/2025-06-13-22-36-11.json --output-path render-output/2025-06-13-22-36-11.mp4
 ```
-该命令依据训练好的模型和预设的新相机轨迹，生成环绕物体的视频。
+该命令依据训练好的模型和预设的新相机轨迹，在 render-output 目录下生成环绕物体的视频。
 
 ##  4️⃣ Tensorboard可视化
 ```
@@ -112,7 +112,7 @@ ns-eval --load-config outputs/vasedeck/splatfacto/2025-06-14_144920/config.yml -
 ```bash
 ns-render camera-path --load-config outputs/vasedeck/splatfacto/2025-06-14_144920/config.yml --camera-path-filename data/vasedeck/camera_paths/2025-06-14-15-11-18.json --output-path render-output/2025-06-14-15-11-18.mp4
 ```
-该命令依据训练好的模型和预设的新相机轨迹，生成环绕物体的视频。
+该命令依据训练好的模型和预设的新相机轨迹，在 render-output 目录下生成环绕物体的视频。
 
 ##  4️⃣ Tensorboard可视化
 ```
